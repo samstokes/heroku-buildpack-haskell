@@ -64,6 +64,8 @@ cd $BUILD_DIR
 # the ld library path hack is horrible, but let's see if it helps
 echo "Installing yesod platform"
 LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared yesod-platform
+echo "Installing persistent-postgresql"
+LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared persistent-postgresql-1.0.0
 echo Installing my damn app
 LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared
 
