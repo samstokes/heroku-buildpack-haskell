@@ -62,6 +62,8 @@ cabal update
 echo "-----> Release the hounds! Installing application"
 cd $BUILD_DIR
 # the ld library path hack is horrible, but let's see if it helps
+echo "Installing bytestring 0.10.0.0"
+LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared bytestring-0.10.0.0
 echo "Installing yesod platform"
 LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared yesod-platform
 echo "Installing persistent-postgresql"
