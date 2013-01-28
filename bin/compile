@@ -63,6 +63,7 @@ echo "-----> Release the hounds! Installing application"
 cd $BUILD_DIR
 # the ld library path hack is horrible, but let's see if it helps
 echo "Installing Things"
+(while true; do sleep 10; echo -n .; done) &
 LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared bytestring-0.10.0.0 yesod-platform persistent-postgresql-1.0.0
 echo Installing my damn app
 LD_LIBRARY_PATH=$CACHE_DIR/lib cabal install -j5 --disable-library-profiling --disable-executable-profiling --disable-shared
